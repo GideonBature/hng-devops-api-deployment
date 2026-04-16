@@ -45,7 +45,7 @@ async fn main() {
         .ok()
         .and_then(|value| value.parse::<u16>().ok())
         .unwrap_or(3000);
-    let addr = SocketAddr::from(([0, 0, 0, 0], port));
+    let addr = SocketAddr::from(([127, 0, 0, 1], port));
     let listener = tokio::net::TcpListener::bind(addr)
         .await
         .expect("failed to bind TCP listener");
